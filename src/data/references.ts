@@ -1,0 +1,117 @@
+import { ReferenceProject } from '../types';
+import { APP_IMAGES, PLACEHOLDER_IMAGES } from './images';
+
+export const REFERENCES_DATA: ReferenceProject[] = [
+  {
+    id: 'ref-1',
+    title: 'Glasreinigung Einfamilienhaus mit Wintergarten',
+    location: 'Barmstedt (Zentrum)',
+    clientType: 'Privatkundschaft',
+    serviceType: 'Fenster- & Wintergartenreinigung',
+    beforeImage: PLACEHOLDER_IMAGES.windowDirty,
+    afterImage: APP_IMAGES.heroHouse,
+    description: 'Komplettreinigung aller Fensterscheiben inkl. Rahmen und Glaseindeckung des großen Wintergartens nach der Pollensaison.',
+    reviewText: 'Herrlich glasklare Sicht! Nord Glanz war überpünktlich, hat extrem sauber gearbeitet und der Wintergarten erstrahlt wieder wie am ersten Tag.',
+    author: 'Familie S., Barmstedt',
+    rating: 5,
+    date: 'Juni 2026'
+  },
+  {
+    id: 'ref-2',
+    title: 'Photovoltaikanlage 18 kWp Dachanlage',
+    location: 'Elmshorn',
+    clientType: 'Privatkundschaft',
+    serviceType: 'Photovoltaikreinigung',
+    beforeImage: PLACEHOLDER_IMAGES.roofDirty,
+    afterImage: APP_IMAGES.pvReinigung,
+    description: 'Schonende Reinstwasserreinigung von 42 Solarmodulen mit hartnäckigem Moos- und Rußansatz.',
+    reviewText: 'Die Ertragsanzeige zeigt sofort spürbar mehr Leistung! Kein Klettern nötig, super freundlich und absolut professionell.',
+    author: 'Markus B., Elmshorn',
+    rating: 5,
+    date: 'Mai 2026'
+  },
+  {
+    id: 'ref-3',
+    title: 'Steinterrasse & Hofeinfahrt Naturstein',
+    location: 'Quickborn',
+    clientType: 'Privatkundschaft',
+    serviceType: 'Steinreinigung & Imprägnierung',
+    beforeImage: PLACEHOLDER_IMAGES.terraceDirty,
+    afterImage: APP_IMAGES.steinterrasse,
+    description: 'Tiefenreinigung einer 85 m² großen Granitsteinterrasse und Beseitigung von dunklem Algenbelag mit anschließender Hydrophobierung.',
+    reviewText: 'Unglaublich, was aus den alten Steinen herausgeholt wurde. Schaut aus wie neu verlegt! Keine Spritzer an der Hauswand.',
+    author: 'Sabine & Peter K., Quickborn',
+    rating: 5,
+    date: 'April 2026'
+  },
+  {
+    id: 'ref-4',
+    title: 'Glasfassade Büro- & Geschäftshaus',
+    location: 'Pinneberg',
+    clientType: 'Gewerbekunde',
+    serviceType: 'Fassaden- & Glasreinigung',
+    beforeImage: PLACEHOLDER_IMAGES.facadeDirty,
+    afterImage: APP_IMAGES.glasfassade,
+    description: 'Regelmäßige Unterhaltsreinigung einer dreistöckigen Glas- und Aluminiumfassade eines Ärztehauses.',
+    reviewText: 'Nord Glanz betreut unser Gebäude seit zwei Jahren zuverlässig. Reibungsloser Ablauf ohne Behinderung unserer Patienten.',
+    author: 'Praxisgemeinschaft Dr. M., Pinneberg',
+    rating: 5,
+    date: 'Juli 2026'
+  },
+  {
+    id: 'ref-5',
+    title: 'Glaseindeckung Doppel-Carport',
+    location: 'Henstedt-Ulzburg',
+    clientType: 'Privatkundschaft',
+    serviceType: 'Carport- & Rahmenreinigung',
+    beforeImage: PLACEHOLDER_IMAGES.windowDirty,
+    afterImage: APP_IMAGES.carport,
+    description: 'Beseitigung von Blättern, Tannennadeln und Moosbelag auf einem 30 m² Carport-Glasdach.',
+    reviewText: 'Sehr schnelle Rückmeldung auf meine Anfrage. Foto gesendet, Angebot erhalten, Termin geklappt. Perfekt!',
+    author: 'Thomas R., Henstedt-Ulzburg',
+    rating: 5,
+    date: 'Mai 2026'
+  },
+  {
+    id: 'ref-6',
+    title: 'Wohnanlage mit 24 Wohneinheiten',
+    location: 'Kaltenkirchen',
+    clientType: 'Wohnungsverwaltung',
+    serviceType: 'Glas- & Treppenhausfensterreinigung',
+    beforeImage: PLACEHOLDER_IMAGES.facadeDirty,
+    afterImage: APP_IMAGES.reinigungsfahrzeug,
+    description: 'Reinigung aller Gemeinschaftsfenster, Kellereingänge und Glasvordächer für eine Eigentümergemeinschaft.',
+    reviewText: 'Verlässlicher Partner für unsere Hausverwaltung. Saubere Arbeit, transparente Abrechnung und sehr gute Erreichbarkeit.',
+    author: 'Verwaltung Nord-Immobilien GmbH',
+    rating: 5,
+    date: 'Juni 2026'
+  },
+  {
+    id: 'ref-7',
+    title: 'Einfamilienhaus Rahmen- & Rollladen-Intensivpflege',
+    location: 'Tornesch',
+    clientType: 'Privatkundschaft',
+    serviceType: 'Rollladen- & Rahmenreinigung',
+    beforeImage: PLACEHOLDER_IMAGES.windowDirty,
+    afterImage: APP_IMAGES.heroHouse,
+    description: 'Gründliche Beseitigung von vergilbtem Straßenschmutz an allen weißen Kunststofffensterrahmen und Aluminium-Rollläden.',
+    reviewText: 'Unsere 15 Jahre alten Rahmenelemente erstrahlen wieder strahlend weiß. Wir sind begeistert vom Ergebnis!',
+    author: 'Gudrun W., Tornesch',
+    rating: 5,
+    date: 'März 2026'
+  },
+  {
+    id: 'ref-8',
+    title: 'Terrassenglasdach & Wintergarten',
+    location: 'Uetersen',
+    clientType: 'Privatkundschaft',
+    serviceType: 'Wintergarten- & Überdachung',
+    beforeImage: PLACEHOLDER_IMAGES.windowDirty,
+    afterImage: APP_IMAGES.wintergarten,
+    description: 'Spezialreinigung inklusive Lotuseffekt-Versiegelung für langanhaltenden Schutz vor Regenstreifen.',
+    reviewText: 'Das Wasser perlt jetzt einfach ab! Sehr kompetentes Team mit sympathischem Auftreten.',
+    author: 'Jens H., Uetersen',
+    rating: 5,
+    date: 'Juli 2026'
+  }
+];

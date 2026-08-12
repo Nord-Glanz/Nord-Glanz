@@ -1,0 +1,6 @@
+{
+  "name": "Nord Glanz",
+  "description": "Moderne Gebäude- und Außenreinigung in Barmstedt und Umgebung – Glasklare Ergebnisse. Saubere Qualität.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
