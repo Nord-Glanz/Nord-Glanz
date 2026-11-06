@@ -18,8 +18,8 @@ export const REVIEWS_DATA: Review[] = [
     location: 'Elmshorn',
     rating: 5,
     date: 'Vor 3 Wochen',
-    service: 'Wintergartenreinigung',
-    comment: 'Unser Wintergarten hatte dringend eine Reinigung nötig. Nord Glanz hat das Glasdach perfekt gereinigt, ohne auf das Dach steigen zu müssen. Das Reinstwasser-Verfahren hinterlässt tatsächlich null Wasserflecken!',
+    service: 'Regenrinnenreinigung',
+    comment: 'Unsere Dachrinnen waren nach dem Herbst komplett verstopft und liefen bei Regen über. Das Team von Nord Glanz hat alles professionell gereinigt, die Abläufe befreit und den Abfall sauber mitgenommen. Großartiger Service!',
     verified: true,
     avatarBg: 'bg-emerald-600'
   },
@@ -52,7 +52,7 @@ export const REVIEWS_DATA: Review[] = [
     rating: 5,
     date: 'Vor 2 Monaten',
     service: 'Gewerbliche Glasreinigung',
-    comment: 'Wir lassen unsere Praxisräume monatlich von Nord Glanz reinigen. Immer zuverlässig, diskret und absolut gründlich. Genau so stellt man sich Dienstleistung vor.',
+    comment: 'Wir lassen unsere Kanzleiräume monatlich von Nord Glanz reinigen. Immer zuverlässig, diskret und absolut gründlich. Genau so stellt man sich Dienstleistung vor.',
     verified: true,
     avatarBg: 'bg-sky-700'
   }

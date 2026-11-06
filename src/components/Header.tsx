@@ -33,7 +33,6 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
 
   const navLinks: { label: string; path: RoutePath }[] = [
     { label: 'Startseite', path: '/' },
-    { label: 'Leistungen', path: '/leistungen' },
     { label: 'Referenzen', path: '/referenzen' },
     { label: 'Preise', path: '/preise' },
     { label: 'Über uns', path: '/ueber-uns' },
@@ -54,7 +53,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
           <div className="flex items-center gap-4 flex-wrap">
             <span className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors">
               <MapPin className="w-3.5 h-3.5 text-[#3BC8FF]" />
-              <strong className="text-white font-medium">Barmstedt</strong> &amp; 20 km Umkreis
+              <strong className="text-white font-medium">Barmstedt</strong>
             </span>
             <span className="hidden md:flex items-center gap-1.5 text-slate-400">
               <Clock className="w-3.5 h-3.5 text-slate-500" />
@@ -62,7 +61,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
             </span>
             <span className="hidden lg:flex items-center gap-1 text-[#3BC8FF] bg-[#1B75D0]/20 px-2 py-0.5 rounded-full text-[11px] font-medium border border-[#3BC8FF]/30">
               <ShieldCheck className="w-3 h-3" />
-              Erstbesichtigung bis 10 km kostenlos
+              Einsatzgebiet: Schleswig-Holstein &amp; Hamburg
             </span>
           </div>
 
@@ -214,7 +213,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
                 <span>WhatsApp Nachricht</span>
               </a>
               <div className="text-center pt-2 text-xs text-slate-400">
-                Einsatzgebiet: Barmstedt + 20 km Umkreis
+                Einsatzgebiet: Ganz Schleswig-Holstein &amp; Hamburg (Standort: Barmstedt)
               </div>
             </div>
           </div>

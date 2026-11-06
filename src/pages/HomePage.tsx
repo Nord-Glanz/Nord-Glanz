@@ -4,7 +4,7 @@ import { COMPANY_INFO } from '../data/company';
 import { SERVICES_DATA } from '../data/services';
 import { FAQS_DATA } from '../data/faqs';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
-import { ReviewSlider } from '../components/ReviewSlider';
+import { GoogleReviewsSection } from '../components/GoogleReviewsSection';
 import { Timeline } from '../components/Timeline';
 import { SEOHead } from '../components/SEOHead';
 import {
@@ -33,8 +33,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <>
       <SEOHead
-        title="Professionelle Glas- & Steinreinigung Kreis Pinneberg & Hamburg"
-        description="Nord Glanz ist Ihr Spezialist für Fensterreinigung, Wintergärten, Photovoltaik, Steinreinigung & Fassaden in ganz Kreis Pinneberg und Hamburg. Jetzt kostenloses Angebot anfragen!"
+        title="Professionelle Glas- & Steinreinigung Schleswig-Holstein & Hamburg"
+        description="Nord Glanz ist Ihr Spezialist für Fensterreinigung, Büroreinigung, Photovoltaik, Stein- und Fassadenreinigung in Schleswig-Holstein und Hamburg. Jetzt kostenloses Angebot anfragen!"
         path="/"
       />
 
@@ -42,13 +42,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="relative bg-slate-900 text-white pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden font-sans">
         {/* Hero Background Image with Gradient Overlay */}
         <div className="absolute inset-0 z-0 opacity-40">
-          <img
-            src={APP_IMAGES.heroHouse}
-            alt="Professionelle Glasreinigung Kreis Pinneberg Hamburg Nord Glanz"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-slate-900/40" />
+          <picture className="block w-full h-full">
+            <source media="(min-width: 1024px)" srcSet={APP_IMAGES.heroHouse} />
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9'%3E%3Crect width='100%25' height='100%25' fill='%23ffffff'/%3E%3C/svg%3E"
+              alt="Professionelle Glasreinigung Schleswig-Holstein Hamburg Nord Glanz"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover bg-white"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#020617_0%,rgba(15,23,42,0.92)_62%,rgba(15,23,42,0.4)_100%)] sm:bg-[linear-gradient(to_right,#020617_0%,rgba(15,23,42,0.92)_calc(max(1.5rem,(100%_-_80rem)_/_2_+_1.5rem)_+_16.75rem),rgba(15,23,42,0.4)_100%)]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -56,16 +59,25 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {/* Trust Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1B75D0]/30 border border-[#3BC8FF]/40 text-[#3BC8FF] text-xs font-semibold mb-6 shadow-sm">
               <Sparkles className="w-4 h-4 text-[#3BC8FF]" />
-              <span>Gebäude- &amp; Außenreinigung in ganz Kreis Pinneberg &amp; Hamburg</span>
+              <span>Gebäude- &amp; Außenreinigung in Schleswig-Holstein &amp; Hamburg</span>
             </div>
 
             {/* Main Hero Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
-              Professionelle Glas- und Steinreinigung in <span className="text-[#3BC8FF] underline decoration-[#1B75D0] underline-offset-8">ganz Kreis Pinneberg und Hamburg</span>.
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6 sm:max-w-2xl">
+              Professionelle Glas-
+              <br className="hidden sm:inline" />{' '}
+              und Steinreinigung in
+              <br className="hidden sm:inline" />{' '}
+              <span className="text-[#3BC8FF] underline decoration-[#1B75D0] underline-offset-8">
+                Schleswig-Holstein
+                <br className="hidden sm:inline" />{' '}
+                und Hamburg
+              </span>
+              .
             </h1>
 
             {/* Subtitle */}
-            <p className="text-slate-200 text-lg sm:text-xl font-normal leading-relaxed mb-8 max-w-2xl">
+            <p className="text-slate-200 text-lg sm:text-xl font-normal leading-relaxed mb-8 max-w-lg">
               Für Privat und Gewerbe. Glasklare Ergebnisse, saubere Qualität und schonende Reinstwasser-Technologie für Ihre Immobilie.
             </p>
 
@@ -95,12 +107,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {/* Hero Trust Bullets */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-slate-800/80 text-xs text-slate-300">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Erstbesichtigung bis 10 km gratis</span>
+                <div className="flex items-center gap-0.5 text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span><strong>5,0 Sterne</strong> (12 Google Rezensionen)</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Transparente Festpreise</span>
+                <span>Einsatz in ganz SH &amp; Hamburg</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -124,11 +140,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </h2>
             </div>
             <button
-              onClick={() => onNavigate('/leistungen')}
-              className="text-[#1B75D0] hover:text-[#1663b3] font-bold text-sm flex items-center gap-1.5 hover:gap-2 transition-all self-start md:self-auto"
+              onClick={() => onNavigate('/kontakt')}
+              className="text-[#1B75D0] hover:text-[#1663b3] font-bold text-sm flex items-center gap-1.5 hover:gap-2 transition-all self-start md:self-auto group"
             >
-              <span>Alle Leistungen ansehen</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Angebot für Ihre Reinigung anfragen</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </div>
 
@@ -147,7 +163,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full border border-slate-700">
-                      {service.category === 'glas' ? 'Glas & Fenster' : service.category === 'stein' ? 'Stein & Fassade' : 'Sonderreinigung'}
+                      {service.id === 'unterhaltsreinigung'
+                        ? 'Gewerbe & Büro'
+                        : service.id === 'regenrinnenreinigung'
+                        ? 'Dach & Rinne'
+                        : service.id === 'treppenhausreinigung'
+                        ? 'Treppenhaus & Service'
+                        : service.id === 'teppichreinigung'
+                        ? 'Textil & Polster'
+                        : service.category === 'glas'
+                        ? 'Glas & Fenster'
+                        : 'Stein & Fassade'}
                     </div>
                   </div>
 
@@ -169,16 +195,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     </ul>
                   </div>
                 </div>
-
-                <div className="p-6 pt-0 border-t border-slate-100/80 mt-4">
-                  <button
-                    onClick={() => onNavigate('/leistungen')}
-                    className="w-full mt-4 bg-slate-50 hover:bg-[#1B75D0] hover:text-white text-slate-800 font-semibold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center gap-2"
-                  >
-                    <span>Details &amp; Termine</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
               </div>
             ))}
           </div>
@@ -191,21 +207,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image side */}
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-white">
                 <img
-                  src={APP_IMAGES.reinigungsfahrzeug}
-                  alt="Nord Glanz Einsatzfahrzeug Barmstedt"
+                  src={APP_IMAGES.gruenderTeam}
+                  alt="Die Gründer von Nord Glanz: T. Cords & M. vom Endt"
                   referrerPolicy="no-referrer"
-                  className="w-full h-[450px] object-cover"
+                  className="w-full h-[460px] object-cover object-top"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 hidden sm:flex bg-slate-900 text-white p-6 rounded-2xl shadow-2xl max-w-xs border border-slate-800">
-                <div className="flex items-start gap-4">
-                  <Award className="w-8 h-8 text-[#3BC8FF] shrink-0" />
+              <div className="absolute -bottom-6 -right-6 hidden sm:flex bg-slate-900 text-white p-5 rounded-2xl shadow-2xl max-w-xs border border-slate-800">
+                <div className="flex items-start gap-3.5">
+                  <Award className="w-7 h-7 text-[#3BC8FF] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-sm text-white">Höchste Qualität</h4>
+                    <h4 className="font-bold text-sm text-white">vom Endt &amp; Cords GbR</h4>
                     <p className="text-xs text-slate-300 mt-1">
-                      Sanfte Reinstwasser-Technologie ohne schädliche Chemie.
+                      Inhabergeführt, persönlich &amp; mit vollem Einsatz vor Ort bei Ihnen.
                     </p>
                   </div>
                 </div>
@@ -215,14 +231,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {/* Content side */}
             <div>
               <span className="text-[#1B75D0] font-semibold text-xs uppercase tracking-wider bg-[#1B75D0]/10 px-3.5 py-1.5 rounded-full border border-[#1B75D0]/20 inline-block mb-3">
-                Unternehmensphilosophie
+                Persönlich vor Ort im Einsatz
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">
-                Warum Kunden im Kreis Pinneberg &amp; Hamburg auf Nord Glanz vertrauen
+                Warum Kunden in Schleswig-Holstein &amp; Hamburg auf Nord Glanz vertrauen
               </h2>
 
               <p className="text-slate-600 text-base leading-relaxed mb-8">
-                Nord Glanz steht für unkomplizierte, verlässliche Handwerksarbeit mit modernster Reinigungstechnik. Wir achten penibel auf Sauberkeit am Arbeitsort und schonen empfindliche Baustoffe dauerhaft.
+                Hinter Nord Glanz stehen wir als Inhaber: <strong>T. Cords &amp; M. vom Endt</strong>. Bei uns gibt es keine anonymen Callcenter oder wechselnde Subunternehmer – wir beraten Sie persönlich, planen transparent und sorgen mit modernster Reinigungstechnik für glasklare Ergebnisse an Ihrem Gebäude.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -282,8 +298,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Process Workflow Timeline */}
       <Timeline />
 
-      {/* Google Reviews Slider */}
-      <ReviewSlider />
+      {/* Google Rezensionen Section */}
+      <GoogleReviewsSection />
 
       {/* FAQ Preview */}
       <section className="py-20 bg-white font-sans">
@@ -321,7 +337,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               onClick={() => onNavigate('/faq')}
               className="inline-flex items-center gap-2 text-[#1B75D0] font-bold text-sm hover:underline"
             >
-              <span>Alle 20+ Fragen im FAQ-Bereich ansehen</span>
+              <span>Alle {FAQS_DATA.length} Fragen im FAQ-Bereich ansehen</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -335,7 +351,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             Bereit für glasklare Sauberkeit?
           </h2>
           <p className="text-slate-200 max-w-xl mx-auto text-base mb-8">
-            Sichern Sie sich jetzt Ihr kostenloses Festpreisangebot. Erstbesichtigung bis 10 km Umkreis Barmstedt ist gratis.
+            Sichern Sie sich jetzt Ihr kostenloses Festpreisangebot. Wir sind in ganz Schleswig-Holstein und Hamburg für Sie im Einsatz.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

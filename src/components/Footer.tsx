@@ -37,12 +37,12 @@ export function Footer({ onNavigate }: FooterProps) {
             </button>
 
             <p className="text-sm text-slate-400 leading-relaxed">
-              Ihr Meisterbetrieb-Standard für professionelle Glas-, Stein- und Fassadenreinigung in Barmstedt und Umgebung. Glasklare Ergebnisse &amp; saubere Qualität.
+              Ihr Spezialist für professionelle Glas-, Stein- und Fassadenreinigung mit Standort Barmstedt – für ganz Schleswig-Holstein und Hamburg. Glasklare Ergebnisse &amp; saubere Qualität.
             </p>
 
             <div className="pt-2 flex items-center gap-2 text-xs text-emerald-400 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Kostenlose Erstbesichtigung bis 10 km</span>
+              <span>Vor-Ort-Service in ganz Schleswig-Holstein &amp; Hamburg</span>
             </div>
           </div>
 
@@ -54,7 +54,6 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-2.5 text-sm">
               {[
                 { label: 'Startseite', path: '/' as RoutePath },
-                { label: 'Unsere Leistungen', path: '/leistungen' as RoutePath },
                 { label: 'Referenzen & Projekte', path: '/referenzen' as RoutePath },
                 { label: 'Preise & Angebot', path: '/preise' as RoutePath },
                 { label: 'Über Nord Glanz', path: '/ueber-uns' as RoutePath },
@@ -82,13 +81,13 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-2 text-xs text-slate-400">
               {[
                 'Fenster- & Glasreinigung',
-                'Wintergarten & Glasdächer',
+                'Unterhalts- & Büroreinigung',
+                'Regenrinnenreinigung',
                 'Photovoltaikanlagen',
                 'Stein- & Pflasterreinigung',
-                'Fassaden- & Klinkerreinigung',
-                'Carports & Überdachungen',
-                'Rahmen & Rollläden',
-                'Sonderreinigung (Lotuseffekt)'
+                'Fassadenreinigung',
+                'Überdachungsreinigung',
+                'Rahmen & Rollläden'
               ].map((service, idx) => (
                 <li key={idx} className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#1B75D0] shrink-0" />
@@ -144,15 +143,14 @@ export function Footer({ onNavigate }: FooterProps) {
 
             <div className="mt-5 pt-4 border-t border-slate-900">
               <span className="text-xs font-medium text-slate-500 block mb-2">
-                Einsatzgebiet (ca. 20 km um Barmstedt):
+                Einsatzgebiet: Ganz Schleswig-Holstein &amp; Hamburg (Standort: Barmstedt)
               </span>
               <div className="flex flex-wrap gap-1 text-[11px] text-slate-400">
-                {COMPANY_INFO.cities.slice(0, 8).map((city, i) => (
+                {COMPANY_INFO.cities.map((city, i) => (
                   <span key={i} className="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
                     {city}
                   </span>
                 ))}
-                <span className="text-slate-500 py-0.5 px-1">u.v.m.</span>
               </div>
             </div>
           </div>
@@ -178,6 +176,13 @@ export function Footer({ onNavigate }: FooterProps) {
               id="footer-datenschutz-link"
             >
               Datenschutz
+            </button>
+            <button
+              onClick={() => onNavigate('/agb')}
+              className="hover:text-slate-300 transition-colors"
+              id="footer-agb-link"
+            >
+              AGB
             </button>
             <button
               onClick={scrollToTop}

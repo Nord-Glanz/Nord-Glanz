@@ -32,7 +32,7 @@ export function PriceEstimatorSection({ onNavigate }: PriceEstimatorSectionProps
             Transparente Festpreise ohne böse Überraschungen
           </h2>
           <p className="text-slate-300 text-base mt-3 leading-relaxed">
-            Keine versteckten Anfahrtskosten oder Pauschalen. Wir kalkulieren jedes Objekt individuell nach Reinigungsaufwand, Material und Fläche.
+            Keine versteckten Kosten oder Pauschalen. Wir kalkulieren jedes Objekt individuell nach Reinigungsaufwand, Material und Fläche.
           </p>
         </div>
 
@@ -45,20 +45,20 @@ export function PriceEstimatorSection({ onNavigate }: PriceEstimatorSectionProps
                 <MapPin className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Kostenlose Erstbesichtigung
+                Erstbesichtigung
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                Im Umkreis von bis zu 10 km um Barmstedt kommen wir persönlich bei Ihnen vorbei, nehmen die Flächen auf und besprechen alle Details unverbindlich.
+                Wir bieten Ihnen eine fachgerechte Erstbesichtigung vor Ort, erfassen alle Flächen und erstellen ein verbindliches Festpreisangebot – im Umkreis von 10 km um unseren Standort vollkommen kostenlos.
               </p>
             </div>
             <ul className="space-y-2 text-xs text-slate-300 border-t border-slate-700/60 pt-4">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>100% kostenfrei &amp; unverbindlich</span>
+                <span>Kostenlose Erstbesichtigung im Umkreis von 10 km</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Persönliche Beratung vor Ort</span>
+                <span>Persönliche Beratung &amp; Aufmaß vor Ort</span>
               </li>
             </ul>
           </div>
@@ -107,7 +107,7 @@ export function PriceEstimatorSection({ onNavigate }: PriceEstimatorSectionProps
             <ul className="space-y-2 text-xs text-slate-300 border-t border-slate-700/60 pt-4">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Ordentliche Rechnung mit MwSt.</span>
+                <span>Ordentliche Rechnung</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />

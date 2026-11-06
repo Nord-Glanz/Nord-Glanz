@@ -31,7 +31,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
     <>
       <SEOHead
         title="FAQ – Häufige Fragen & Antworten | Nord Glanz"
-        description="Über 20 Antworten auf häufig gestellte Fragen zu Fensterreinigung, Wintergärten, Photovoltaik, Preisen, Ablauf und Zahlungsarten bei Nord Glanz."
+        description="Antworten auf häufig gestellte Fragen zu Fensterreinigung, Photovoltaik, Steinreinigung, Preisen, Ablauf und Zahlungsarten bei Nord Glanz."
         path="/faq"
       />
 
@@ -39,7 +39,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="bg-slate-900 text-white py-16 sm:py-20 font-sans border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-3xl">
           <span className="text-[#3BC8FF] font-semibold text-xs uppercase tracking-wider bg-[#3BC8FF]/10 px-3.5 py-1.5 rounded-full border border-[#3BC8FF]/20 inline-block mb-3">
-            Häufige Fragen (20+ Antworten)
+            Häufige Fragen ({FAQS_DATA.length} Antworten)
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
             Fragen &amp; Antworten
@@ -57,7 +57,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
             <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Suchen nach z.B. 'Wintergarten', 'Dauer', 'Bezahlung', 'Termin'..."
+              placeholder="Suchen nach z.B. 'Regenrinne', 'Büro', 'Photovoltaik', 'Bezahlung'..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 bg-white shadow-sm focus:border-[#1B75D0] focus:ring-2 focus:ring-[#1B75D0]/20 outline-none text-sm text-slate-800"

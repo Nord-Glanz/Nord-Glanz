@@ -25,7 +25,7 @@ export function ReviewSlider() {
             <span>4.9 / 5.0 bei Google Bewertungen</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Was unsere Kunden aus Barmstedt &amp; Umgebung sagen
+            Was unsere Kunden aus Schleswig-Holstein &amp; Hamburg sagen
           </h2>
           <p className="text-slate-600 text-sm mt-2">
             Echte Erfahrungsberichte von Hausbesitzern, Gewerbekunden und Wohnungsverwaltungen.

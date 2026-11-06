@@ -6,13 +6,8 @@ import { LightboxModal } from '../components/LightboxModal';
 import { SEOHead } from '../components/SEOHead';
 import {
   MapPin,
-  Star,
-  Quote,
-  Maximize2,
   Calendar,
-  Building,
-  UserCheck,
-  CheckCircle2
+  Maximize2
 } from 'lucide-react';
 
 interface ReferencesPageProps {
@@ -48,7 +43,7 @@ export function ReferencesPage({ onNavigate }: ReferencesPageProps) {
             Vorher &amp; Nachher Ergebnisse
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Überzeugen Sie sich selbst von unseren Reinigungsergebnissen bei Privat- und Gewerbeobjekten im Raum Barmstedt und Umgebung.
+            Überzeugen Sie sich selbst von unseren Reinigungsergebnissen bei Privat- und Gewerbeobjekten in ganz Schleswig-Holstein und Hamburg.
           </p>
         </div>
       </section>
@@ -56,27 +51,35 @@ export function ReferencesPage({ onNavigate }: ReferencesPageProps) {
       {/* References Gallery Section */}
       <section className="py-12 bg-slate-50 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Filters */}
-          <div className="flex justify-center mb-10 flex-wrap gap-2">
-            {[
-              { id: 'all', label: 'Alle Referenzen (8)' },
-              { id: 'Privatkundschaft', label: 'Privathäuser & Wohnungen' },
-              { id: 'Gewerbekunde', label: 'Büros & Gewerbe' },
-              { id: 'Wohnungsverwaltung', label: 'Wohnungsverwaltungen' }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setSelectedFilter(tab.id as any)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all ${
-                  selectedFilter === tab.id
-                    ? 'bg-[#1B75D0] text-white shadow-md shadow-[#1B75D0]/25'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          {/* Filters (only shown when multiple categories have items) */}
+          {new Set(REFERENCES_DATA.map((r) => r.clientType)).size > 1 && (
+            <div className="flex justify-center mb-10 flex-wrap gap-2">
+              {[
+                { id: 'all', label: `Alle Referenzen (${REFERENCES_DATA.length})` },
+                { id: 'Privatkundschaft', label: 'Privathäuser & Wohnungen' },
+                { id: 'Gewerbekunde', label: 'Büros & Gewerbe' },
+                { id: 'Wohnungsverwaltung', label: 'Wohnungsverwaltungen' }
+              ]
+                .filter(
+                  (tab) =>
+                    tab.id === 'all' ||
+                    REFERENCES_DATA.some((r) => r.clientType === tab.id)
+                )
+                .map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setSelectedFilter(tab.id as any)}
+                    className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all ${
+                      selectedFilter === tab.id
+                        ? 'bg-[#1B75D0] text-white shadow-md shadow-[#1B75D0]/25'
+                        : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+            </div>
+          )}
 
           {/* Reference Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -121,27 +124,10 @@ export function ReferencesPage({ onNavigate }: ReferencesPageProps) {
                     <h3 className="text-xl font-bold text-slate-900 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>
-
-                  {/* Customer Review Quote if available */}
-                  {item.reviewText && (
-                    <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 mt-2 relative">
-                      <div className="flex items-center gap-1 mb-1">
-                        {[...Array(item.rating || 5)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                        ))}
-                      </div>
-                      <p className="text-slate-700 text-xs italic leading-relaxed">
-                        "{item.reviewText}"
-                      </p>
-                      <span className="text-[11px] font-bold text-slate-500 block mt-2">
-                        — {item.author}
-                      </span>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}

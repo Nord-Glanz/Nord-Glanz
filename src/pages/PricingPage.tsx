@@ -20,8 +20,8 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
   return (
     <>
       <SEOHead
-        title="Preise & Angebot | Nord Glanz Barmstedt"
-        description="Faire Festpreis-Angebote für Glas- & Steinreinigung. Erstbesichtigung bis 10 km kostenlos. Angebot auch anhand von Fotos möglich."
+        title="Preise & Angebot | Nord Glanz – Schleswig-Holstein & Hamburg"
+        description="Faire Festpreis-Angebote für Glas-, Gebäude- & Steinreinigung in ganz Schleswig-Holstein und Hamburg. Erstbesichtigung vor Ort oder Angebot per Foto."
         path="/preise"
       />
 

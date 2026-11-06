@@ -125,12 +125,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                 <div className="pt-4 border-t border-slate-100">
                   <h4 className="font-bold text-slate-900 text-sm mb-1 flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-[#1B75D0]" />
-                    <span>Standort &amp; Radius</span>
+                    <span>Standort &amp; Einsatzgebiet</span>
                   </h4>
                   <p className="text-slate-600 text-xs leading-relaxed mb-3">
                     {COMPANY_INFO.fullAddress}
                     <br />
-                    Einsatzgebiet: ca. 20 km Umkreis.
+                    Einsatzgebiet: Ganz Schleswig-Holstein &amp; Hamburg.
                   </p>
 
                   <div className="flex flex-wrap gap-1 text-[11px] text-slate-600">

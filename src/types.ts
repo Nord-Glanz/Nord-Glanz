@@ -7,7 +7,8 @@ export type RoutePath =
   | '/faq'
   | '/kontakt'
   | '/datenschutz'
-  | '/impressum';
+  | '/impressum'
+  | '/agb';
 
 export interface ServiceItem {
   id: string;

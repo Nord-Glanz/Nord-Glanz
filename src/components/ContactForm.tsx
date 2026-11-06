@@ -33,14 +33,13 @@ export function ContactForm() {
 
   const serviceOptions = [
     'Fensterreinigung',
-    'Wintergartenreinigung',
+    'Unterhalts- & Büroreinigung',
+    'Regenrinnenreinigung',
     'Photovoltaikreinigung',
     'Stein- & Pflasterreinigung',
     'Fassadenreinigung',
-    'Carport & Glasdächer',
-    'Rahmen & Rollläden',
-    'Regenrinnenreinigung',
-    'Sonderreinigung / Lotuseffekt'
+    'Überdachungsreinigung',
+    'Rahmen & Rollläden'
   ];
 
   const handleServiceToggle = (service: string) => {
@@ -150,7 +149,7 @@ export function ContactForm() {
               Kostenloses Angebot anfordern
             </h3>
             <p className="text-slate-500 text-sm mt-1">
-              Füllen Sie die Felder aus – im Umkreis bis 10 km von Barmstedt ist die Erstbesichtigung vollkommen kostenfrei.
+              Füllen Sie die Felder aus – wir erstellen Ihnen zügig ein kostenloses Festpreisangebot für Ihr Objekt in Schleswig-Holstein oder Hamburg.
             </p>
           </div>
 

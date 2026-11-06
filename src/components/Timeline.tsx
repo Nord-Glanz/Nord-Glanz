@@ -27,7 +27,7 @@ export function Timeline() {
     {
       num: '03',
       title: 'Angebot erhalten',
-      desc: 'Transparentes Festpreisangebot – ohne versteckte Kosten oder Anfahrtszuschläge.',
+      desc: 'Transparentes Festpreisangebot – ohne versteckte Kosten.',
       icon: FileCheck,
       color: 'bg-cyan-500'
     },

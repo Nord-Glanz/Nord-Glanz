@@ -30,7 +30,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
     <>
       <SEOHead
         title="Leistungen | Gebäude- & Außenreinigung Barmstedt"
-        description="Alle Reinigungsleistungen von Nord Glanz: Fensterreinigung, Wintergarten, Photovoltaik, Stein- & Pflasterreinigung, Fassade, Carport & Sonderreinigung."
+        description="Alle Reinigungsleistungen von Nord Glanz: Fensterreinigung, Unterhalts- & Büroreinigung, Photovoltaik, Stein- & Pflasterreinigung, Fassadenreinigung, Überdachungsreinigung & Regenrinnenreinigung."
         path="/leistungen"
       />
 
@@ -44,7 +44,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
             Professionelle Gebäude- &amp; Außenreinigung
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Hochwertige Handwerksqualität für Privat- und Gewerbeobjekte in Barmstedt und Umgebung. Reinstwasser-Technologie, Oberflächenschonung und transparente Festpreise.
+            Hochwertige Handwerksqualität für Privat- und Gewerbeobjekte in ganz Schleswig-Holstein und Hamburg. Reinstwasser-Technologie, Oberflächenschonung und transparente Festpreise.
           </p>
         </div>
       </section>
@@ -54,10 +54,10 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-center mb-10 flex-wrap gap-2">
             {[
-              { id: 'all', label: 'Alle Leistungen (13)' },
+              { id: 'all', label: `Alle Leistungen (${SERVICES_DATA.length})` },
               { id: 'glas', label: 'Glas- & Fensterreinigung' },
               { id: 'stein', label: 'Stein- & Fassadenreinigung' },
-              { id: 'sonder', label: 'Sonder- & Spezialreinigung' }
+              { id: 'sonder', label: 'Büro, Treppenhaus, Textil & Dachrinnen' }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -89,11 +89,17 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full border border-slate-700">
-                      {service.category === 'glas'
+                      {service.id === 'unterhaltsreinigung'
+                        ? 'Gewerbe & Büro'
+                        : service.id === 'regenrinnenreinigung'
+                        ? 'Dach & Rinne'
+                        : service.id === 'treppenhausreinigung'
+                        ? 'Treppenhaus & Service'
+                        : service.id === 'teppichreinigung'
+                        ? 'Textil & Polster'
+                        : service.category === 'glas'
                         ? 'Glas & Fenster'
-                        : service.category === 'stein'
-                        ? 'Stein & Fassade'
-                        : 'Sonderreinigung'}
+                        : 'Stein & Fassade'}
                     </div>
                   </div>
 
@@ -212,7 +218,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
 
             <div className="p-6 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="text-xs text-slate-500">
-                Erstbesichtigung bis 10 km Umkreis Barmstedt kostenfrei.
+                Kostenlose &amp; unverbindliche Erstbesichtigung in Schleswig-Holstein &amp; Hamburg.
               </span>
               <button
                 onClick={() => {

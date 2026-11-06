@@ -12,6 +12,7 @@ import { FAQPage } from './pages/FAQPage';
 import { ContactPage } from './pages/ContactPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { ImprintPage } from './pages/ImprintPage';
+import { TermsPage } from './pages/TermsPage';
 
 export default function App() {
   const getPathFromLocation = (): RoutePath => {
@@ -25,7 +26,8 @@ export default function App() {
       '/faq',
       '/kontakt',
       '/datenschutz',
-      '/impressum'
+      '/impressum',
+      '/agb'
     ];
     return validPaths.includes(path) ? path : '/';
   };
@@ -68,6 +70,8 @@ export default function App() {
         return <PrivacyPage />;
       case '/impressum':
         return <ImprintPage />;
+      case '/agb':
+        return <TermsPage />;
       default:
         return <HomePage onNavigate={navigateTo} />;
     }

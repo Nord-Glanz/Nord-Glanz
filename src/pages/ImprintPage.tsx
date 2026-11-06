@@ -29,8 +29,8 @@ export function ImprintPage() {
               Deutschland
             </p>
 
-            <h2 className="text-lg font-bold text-slate-900 mt-6">Vertretungsberechtigte Gesellschafter</h2>
-            <p>Vertreten durch die Gesellschafter {COMPANY_INFO.owner}</p>
+            <h2 className="text-lg font-bold text-slate-900 mt-6">Vertreten durch</h2>
+            <p>Tom Cords und Mattis vom Endt</p>
 
             <h2 className="text-lg font-bold text-slate-900 mt-6">Kontakt</h2>
             <p>
@@ -43,16 +43,14 @@ export function ImprintPage() {
               Website: <a href={COMPANY_INFO.website} target="_blank" rel="noopener noreferrer" className="hover:underline text-[#1B75D0]">{COMPANY_INFO.website}</a>
             </p>
 
-            <h2 className="text-lg font-bold text-slate-900 mt-6">Umsatzsteuer-ID</h2>
+            <h2 className="text-lg font-bold text-slate-900 mt-6">Steuernummer</h2>
             <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-              <br />
-              DE 341 892 014 (Muster-ID)
+              Steuernummer: 13/289/00615
             </p>
 
             <h2 className="text-lg font-bold text-slate-900 mt-6">Berufshaftpflichtversicherung</h2>
             <p>
-              Betriebshaftpflichtversicherung für Gebäude- und Außenreinigung mit weltweiter Deckung bei der Allianz Versicherungs-AG.
+              Durch die Baloise Versicherungs AG
             </p>
 
             <h2 className="text-lg font-bold text-slate-900 mt-6">EU-Streitschlichtung</h2>

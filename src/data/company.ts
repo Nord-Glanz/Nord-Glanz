@@ -1,7 +1,9 @@
 export const COMPANY_INFO = {
   name: 'Nord Glanz',
   legalName: 'Nord Glanz – vom Endt & Cords Gebäude- und Außenreinigung GbR',
-  owner: 'vom Endt & Cords',
+  owner: 'Tom Cords und Mattis vom Endt',
+  taxNumber: '13/289/00615',
+  insurance: 'Baloise Versicherungs AG',
   claim: 'Glasklare Ergebnisse. Saubere Qualität.',
   location: 'Barmstedt',
   street: 'Kleine Gärtnerstraße 5',
@@ -15,37 +17,37 @@ export const COMPANY_INFO = {
   email: 'kontakt@nord-glanz.com',
   website: 'https://nord-glanz.com',
   workingHours: 'Mo – Sa: 07:00 – 19:00 Uhr',
-  radiusKm: 20,
+  serviceArea: 'Ganz Schleswig-Holstein & Hamburg',
   cities: [
+    'Schleswig-Holstein',
+    'Hamburg',
     'Barmstedt',
     'Elmshorn',
+    'Pinneberg',
     'Quickborn',
     'Kaltenkirchen',
     'Henstedt-Ulzburg',
-    'Pinneberg',
+    'Norderstedt',
+    'Neumünster',
+    'Kiel',
+    'Lübeck',
+    'Itzehoe',
+    'Wedel',
     'Uetersen',
-    'Tornesch',
-    'Hemdingen',
-    'Heede',
-    'Lutzhorn',
-    'Bullenkuhlen',
-    'Bevern',
-    'Groß Offenseth-Aspern'
+    'Tornesch'
   ],
   servicesSummary: [
     'Fensterreinigung',
+    'Unterhalts- & Büroreinigung',
+    'Regenrinnenreinigung',
     'Glasreinigung',
     'Steinreinigung',
     'Pflasterreinigung',
     'Photovoltaikreinigung',
-    'Wintergartenreinigung',
     'Fassadenreinigung',
-    'Carportreinigung',
+    'Überdachungsreinigung',
     'Rahmenreinigung',
-    'Rollladenreinigung',
-    'Regenrinnenreinigung',
-    'Überdachungen',
-    'Sonderreinigungen (Lotuseffekt)'
+    'Rollladenreinigung'
   ],
   usps: [
     {
@@ -58,11 +60,11 @@ export const COMPANY_INFO = {
     },
     {
       title: 'Pünktlich & Zuverlässig',
-      desc: 'Fixe Terminzusages und sauberes Arbeiten ohne Verschmutzung des Umfelds.'
+      desc: 'Fixe Terminzusagen und sauberes Arbeiten ohne Verschmutzung des Umfelds in ganz SH & HH.'
     },
     {
       title: 'Faire & Transparente Preise',
-      desc: 'Kostenlose Erstbesichtigung im Umkreis bis 10 km oder unverbindliches Angebot per Foto.'
+      desc: 'Kostenlose Erstbesichtigung und unverbindliches Festpreisangebot per Vor-Ort-Termin oder Foto.'
     }
   ]
 };
@@ -73,7 +75,7 @@ export const generateLocalBusinessSchema = () => {
     '@type': 'LocalBusiness',
     'name': COMPANY_INFO.legalName,
     'url': COMPANY_INFO.website,
-    'description': 'Professionelle Gebäude- und Außenreinigung in Barmstedt und ca. 20 km Umkreis. Spezialisiert auf Fenster, Glas, Stein, Photovoltaik, Wintergärten und Fassaden.',
+    'description': 'Professionelle Gebäude- und Außenreinigung mit Standort Barmstedt – im Einsatz in ganz Schleswig-Holstein und Hamburg. Spezialisiert auf Fenster, Glas, Büroreinigung, Stein, Photovoltaik und Fassaden.',
     'image': `${COMPANY_INFO.website}/assets/hero_house.jpg`,
     'telephone': COMPANY_INFO.phone,
     'email': COMPANY_INFO.email,
@@ -89,7 +91,7 @@ export const generateLocalBusinessSchema = () => {
       'latitude': 53.7884,
       'longitude': 9.7719
     },
-    'areaServed': COMPANY_INFO.cities,
+    'areaServed': ['Schleswig-Holstein', 'Hamburg', ...COMPANY_INFO.cities],
     'priceRange': '€€',
     'openingHours': 'Mo-Sa 07:00-19:00',
     'sameAs': [
