@@ -1,3 +1,5 @@
+import logoImg from '../assets/logo.png';
+
 interface LogoProps {
   className?: string;
   size?: number;
@@ -16,12 +18,13 @@ export function Logo({
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <img
-        src="/assets/aistudio/favicon_efa70838.png"
+        src={logoImg}
         alt="Nord Glanz Logo"
         width={size}
         height={size}
         referrerPolicy="no-referrer"
-        className="shrink-0 object-contain"
+        className="shrink-0 object-contain block"
+        style={{ width: `${size}px`, height: `${size}px` }}
       />
 
       {showText && (

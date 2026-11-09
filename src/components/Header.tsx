@@ -158,12 +158,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
             <div>
               {/* Drawer Header */}
               <div className="flex items-center justify-between pb-6 border-b border-slate-100">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#1B75D0] to-[#3BC8FF] flex items-center justify-center text-white">
-                    <Sparkles className="w-4 h-4" />
-                  </div>
-                  <span className="font-bold text-slate-900 text-lg">Nord Glanz</span>
-                </div>
+                <Logo size={36} showText={true} />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100"

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { RoutePath, ServiceItem } from '../types';
 import { SERVICES_DATA } from '../data/services';
 import { SEOHead } from '../components/SEOHead';
+import { Logo } from '../components/Logo';
 import {
   CheckCircle2,
   ChevronRight,
@@ -104,9 +105,12 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#1B75D0] transition-colors">
-                      {service.title}
-                    </h3>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#1B75D0] transition-colors">
+                        {service.title}
+                      </h3>
+                      <Logo size={22} showText={false} className="shrink-0 opacity-80 mt-1" />
+                    </div>
                     <p className="text-slate-600 text-sm leading-relaxed mb-4">
                       {service.shortDesc}
                     </p>
@@ -174,7 +178,10 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
 
             <div className="p-6 sm:p-8 space-y-6 max-h-[60vh] overflow-y-auto">
               <div>
-                <h4 className="font-bold text-slate-900 text-sm mb-2">Beschreibung:</h4>
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-bold text-slate-900 text-sm">Beschreibung:</h4>
+                  <Logo size={24} showText={false} />
+                </div>
                 <p className="text-slate-600 text-sm leading-relaxed">{selectedService.fullDesc}</p>
               </div>
 

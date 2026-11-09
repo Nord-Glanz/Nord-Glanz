@@ -1,5 +1,6 @@
 import { SEOHead } from '../components/SEOHead';
 import { COMPANY_INFO } from '../data/company';
+import { Logo } from '../components/Logo';
 
 export function PrivacyPage() {
   return (
@@ -12,11 +13,14 @@ export function PrivacyPage() {
 
       <section className="py-16 bg-white font-sans">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8 text-slate-700 leading-relaxed text-sm">
-          <div className="border-b border-slate-200 pb-6">
-            <h1 className="text-3xl font-extrabold text-slate-900 mb-2">
-              Datenschutzerklärung
-            </h1>
-            <p className="text-slate-500 text-xs">Stand: 2026 / DSGVO-konform</p>
+          <div className="border-b border-slate-200 pb-6 flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-extrabold text-slate-900 mb-2">
+                Datenschutzerklärung
+              </h1>
+              <p className="text-slate-500 text-xs">Stand: 2026 / DSGVO-konform</p>
+            </div>
+            <Logo size={48} showText={false} className="shrink-0" />
           </div>
 
           <div className="space-y-4">

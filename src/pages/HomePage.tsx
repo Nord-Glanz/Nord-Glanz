@@ -7,6 +7,7 @@ import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
 import { GoogleReviewsSection } from '../components/GoogleReviewsSection';
 import { Timeline } from '../components/Timeline';
 import { SEOHead } from '../components/SEOHead';
+import { Logo } from '../components/Logo';
 import {
   Sparkles,
   MessageSquare,
@@ -178,9 +179,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#1B75D0] transition-colors">
-                      {service.title}
-                    </h3>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#1B75D0] transition-colors">
+                        {service.title}
+                      </h3>
+                      <Logo size={22} showText={false} className="shrink-0 opacity-80 mt-1" />
+                    </div>
                     <p className="text-slate-600 text-sm leading-relaxed mb-4">
                       {service.shortDesc}
                     </p>
@@ -217,7 +221,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
               <div className="absolute -bottom-6 -right-6 hidden sm:flex bg-slate-900 text-white p-5 rounded-2xl shadow-2xl max-w-xs border border-slate-800">
                 <div className="flex items-start gap-3.5">
-                  <Award className="w-7 h-7 text-[#3BC8FF] shrink-0 mt-0.5" />
+                  <Logo size={36} showText={false} className="shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-sm text-white">vom Endt &amp; Cords GbR</h4>
                     <p className="text-xs text-slate-300 mt-1">

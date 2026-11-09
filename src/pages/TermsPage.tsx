@@ -1,4 +1,5 @@
 import { SEOHead } from '../components/SEOHead';
+import { Logo } from '../components/Logo';
 
 export function TermsPage() {
   return (
@@ -11,22 +12,25 @@ export function TermsPage() {
 
       <section className="py-16 bg-white font-sans">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8 text-slate-700 leading-relaxed text-sm">
-          <div className="border-b border-slate-200 pb-6 space-y-3">
-            <h1 className="text-3xl font-extrabold text-slate-900">
-              Allgemeine Geschäftsbedingungen (AGB)
-            </h1>
-            <div className="space-y-1">
-              <h2 className="text-base font-bold text-slate-800">
-                Nord Glanz – vom Endt &amp; Cords Gebäude- und Außenreinigung GbR
-              </h2>
-              <p className="text-slate-600">
-                Kleine Gärtnerstraße 5
-                <br />
-                25355 Barmstedt
-                <br />
-                Deutschland
-              </p>
+          <div className="border-b border-slate-200 pb-6 flex items-start justify-between gap-4">
+            <div className="space-y-3">
+              <h1 className="text-3xl font-extrabold text-slate-900">
+                Allgemeine Geschäftsbedingungen (AGB)
+              </h1>
+              <div className="space-y-1">
+                <h2 className="text-base font-bold text-slate-800">
+                  Nord Glanz – vom Endt &amp; Cords Gebäude- und Außenreinigung GbR
+                </h2>
+                <p className="text-slate-600">
+                  Kleine Gärtnerstraße 5
+                  <br />
+                  25355 Barmstedt
+                  <br />
+                  Deutschland
+                </p>
+              </div>
             </div>
+            <Logo size={48} showText={false} className="shrink-0" />
           </div>
 
           <div className="divide-y divide-slate-200">

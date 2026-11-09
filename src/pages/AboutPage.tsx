@@ -2,6 +2,7 @@ import { RoutePath } from '../types';
 import { COMPANY_INFO } from '../data/company';
 import { APP_IMAGES } from '../data/images';
 import { SEOHead } from '../components/SEOHead';
+import { Logo } from '../components/Logo';
 import { ChevronRight } from 'lucide-react';
 
 interface AboutPageProps {
@@ -37,6 +38,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="mb-4">
+                <Logo size={42} showText={true} />
+              </div>
               <span className="text-[#1B75D0] font-semibold text-xs uppercase tracking-wider bg-[#1B75D0]/10 px-3.5 py-1.5 rounded-full border border-[#1B75D0]/20 inline-block mb-3">
                 Unsere Mission
               </span>

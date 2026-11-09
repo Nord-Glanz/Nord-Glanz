@@ -158,8 +158,9 @@ export function Footer({ onNavigate }: FooterProps) {
 
         {/* Bottom Bar & Legal Links */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div>
-            © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Alle Rechte vorbehalten.
+          <div className="flex items-center gap-3">
+            <Logo size={24} showText={false} />
+            <span>© {new Date().getFullYear()} {COMPANY_INFO.legalName}. Alle Rechte vorbehalten.</span>
           </div>
 
           <div className="flex items-center gap-6">
