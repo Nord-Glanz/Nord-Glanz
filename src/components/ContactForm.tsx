@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { COMPANY_INFO } from '../data/company';
 import {
   Send,
-  Upload,
   CheckCircle2,
-  X,
   Phone,
   MessageSquare,
   Sparkles,
@@ -29,7 +27,6 @@ export function ContactForm() {
     preferredContact: 'phone' as 'phone' | 'whatsapp' | 'email'
   });
 
-  const [files, setFiles] = useState<{ id: string; name: string; url: string }[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -60,22 +57,7 @@ export function ContactForm() {
     });
   };
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files) return;
-    const uploaded: File[] = Array.from(e.target.files);
 
-    const newFiles = uploaded.map((file: File) => ({
-      id: Math.random().toString(36).substr(2, 9),
-      name: file.name,
-      url: URL.createObjectURL(file)
-    }));
-
-    setFiles((prev) => [...prev, ...newFiles]);
-  };
-
-  const handleRemoveFile = (id: string) => {
-    setFiles((prev) => prev.filter((f) => f.id !== id));
-  };
 
   const generateMailtoUrl = (data: typeof formData) => {
     const subject = encodeURIComponent(`Neue Anfrage von ${data.name} via Nord Glanz Website`);
@@ -157,8 +139,7 @@ export function ContactForm() {
               : currentData.preferredContact === 'whatsapp'
               ? 'WhatsApp'
               : 'E-Mail',
-          Nachricht: currentData.message || 'Keine Nachricht angegeben',
-          Dateien: files.length > 0 ? files.map((f) => f.name).join(', ') : 'Keine Fotos angehängt'
+          Nachricht: currentData.message || 'Keine Nachricht angegeben'
         })
       });
     } catch (err) {
@@ -245,7 +226,6 @@ export function ContactForm() {
                   message: '',
                   preferredContact: 'phone'
                 });
-                setFiles([]);
               }}
               className="text-slate-500 hover:text-slate-800 text-xs font-medium underline transition-colors"
             >
@@ -396,60 +376,10 @@ export function ContactForm() {
             </div>
           </div>
 
-          {/* Photo Upload Simulator */}
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                4. Fotos des Objekts hinzufügen (Optional)
-              </label>
-              <span className="text-[11px] text-slate-400">Für schnelleren Festpreis</span>
-            </div>
-
-            <div className="border-2 border-dashed border-slate-200 hover:border-[#1B75D0] rounded-2xl p-6 text-center transition-colors bg-slate-50">
-              <input
-                type="file"
-                multiple
-                accept="image/*"
-                onChange={handleFileUpload}
-                className="hidden"
-                id="photo-upload-input"
-              />
-              <label htmlFor="photo-upload-input" className="cursor-pointer block">
-                <Upload className="w-8 h-8 text-[#1B75D0] mx-auto mb-2" />
-                <span className="text-xs font-bold text-slate-800 block">
-                  Fotos hochladen oder hierher ziehen
-                </span>
-                <span className="text-[11px] text-slate-400 block mt-1">
-                  JPG, PNG bis zu 10 MB
-                </span>
-              </label>
-
-              {files.length > 0 && (
-                <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-slate-200">
-                  {files.map((file) => (
-                    <div
-                      key={file.id}
-                      className="relative w-16 h-16 rounded-lg overflow-hidden border border-slate-300 shadow-sm"
-                    >
-                      <img src={file.url} alt="Upload" className="w-full h-full object-cover" />
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveFile(file.id)}
-                        className="absolute top-1 right-1 bg-slate-900/80 text-white rounded-full p-0.5 hover:bg-red-600"
-                      >
-                        <X className="w-3 h-3" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
           {/* Message textarea */}
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-              5. Nachricht &amp; Anmerkungen
+              4. Nachricht &amp; Anmerkungen
             </label>
             <textarea
               rows={3}

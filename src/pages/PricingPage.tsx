@@ -51,7 +51,7 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
               Jetzt Festpreis-Angebot anfordern
             </h2>
             <p className="text-slate-600 text-sm mt-2">
-              Laden Sie Fotos hoch oder beschreiben Sie Ihr Objekt – Sie erhalten Ihr verbindliches Festpreis-Angebot <strong>innerhalb von 48 Stunden</strong>.
+              Beschreiben Sie einfach kurz Ihr Objekt – Sie erhalten Ihr verbindliches Festpreis-Angebot <strong>innerhalb von 48 Stunden</strong>.
             </p>
           </div>
 

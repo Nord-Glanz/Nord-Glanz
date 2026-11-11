@@ -157,10 +157,14 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
 
         {/* Bottom Bar & Legal Links */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-3">
-            <Logo size={24} showText={false} />
-            <span>© {new Date().getFullYear()} {COMPANY_INFO.legalName}. Alle Rechte vorbehalten.</span>
+        <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start gap-2">
+              <Logo size={24} showText={false} />
+              <span>© {new Date().getFullYear()} {COMPANY_INFO.legalName}. Alle Rechte vorbehalten.</span>
+            </div>
+            <span className="hidden sm:inline text-slate-700">•</span>
+            <span className="text-slate-400">Diese Website und einige Bilder wurden mit der Hilfe von KI erstellt.</span>
           </div>
 
           <div className="flex items-center gap-6">

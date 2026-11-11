@@ -22,7 +22,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     <>
       <SEOHead
         title="Kontakt & Angebot | Nord Glanz Barmstedt"
-        description="Nehmen Sie direkt Kontakt auf: Telefonisch, per WhatsApp oder über unser Online-Formular mit Foto-Upload für schnelle Festpreis-Angebote."
+        description="Nehmen Sie direkt Kontakt auf: Telefonisch, per WhatsApp oder über unser Online-Formular für schnelle Festpreis-Angebote."
         path="/kontakt"
       />
 
